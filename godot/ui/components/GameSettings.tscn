@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=3 uid="uid://nbaodrlopo7y"]
+
+[ext_resource type="PackedScene" uid="uid://cpo1u33eut0i4" path="res://ui/components/FloatRangeGameSettingsOption.tscn" id="1_0gpwr"]
+[ext_resource type="Script" path="res://ui/components/GameSettings.gd" id="1_eje8l"]
+
+[node name="GameSettings" type="VBoxContainer"]
+script = ExtResource("1_eje8l")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 392.0
+offset_bottom = 26.0
+text = "Game Settings"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_top = 30.0
+offset_right = 392.0
+offset_bottom = 126.0
+theme_override_constants/margin_top = 10
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+offset_top = 10.0
+offset_right = 392.0
+offset_bottom = 96.0
+columns = 4
+
+[node name="MasterVolumeEnabled" type="Label" parent="MarginContainer/GridContainer"]
+offset_right = 118.0
+offset_bottom = 26.0
+text = "Master Volume"
+
+[node name="MasterEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+offset_left = 122.0
+offset_right = 166.0
+offset_bottom = 26.0
+button_pressed = true
+
+[node name="MasterVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
+offset_left = 170.0
+offset_right = 288.0
+offset_bottom = 26.0
+text = "Master Volume
+"
+
+[node name="MasterVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
+unique_name_in_owner = true
+offset_left = 292.0
+offset_right = 392.0
+offset_bottom = 16.0
+property = "mastervolume"
+
+[node name="MusicEnabledLabel" type="Label" parent="MarginContainer/GridContainer"]
+offset_top = 30.0
+offset_right = 118.0
+offset_bottom = 56.0
+text = "Music Enabled
+"
+
+[node name="MusicEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+offset_left = 122.0
+offset_top = 30.0
+offset_right = 166.0
+offset_bottom = 56.0
+button_pressed = true
+
+[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
+offset_left = 170.0
+offset_top = 30.0
+offset_right = 288.0
+offset_bottom = 56.0
+text = "Music Volume
+"
+
+[node name="MusicVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
+unique_name_in_owner = true
+offset_left = 292.0
+offset_top = 30.0
+offset_right = 392.0
+offset_bottom = 46.0
+property = "musicvolume"
+
+[node name="SoundEnabledLabel" type="Label" parent="MarginContainer/GridContainer"]
+offset_top = 60.0
+offset_right = 118.0
+offset_bottom = 86.0
+text = "Sound Enabled"
+
+[node name="SoundEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+offset_left = 122.0
+offset_top = 60.0
+offset_right = 166.0
+offset_bottom = 86.0
+button_pressed = true
+
+[node name="SoundVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
+offset_left = 170.0
+offset_top = 60.0
+offset_right = 288.0
+offset_bottom = 86.0
+text = "Sound Volume
+"
+
+[node name="SoundVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
+unique_name_in_owner = true
+offset_left = 292.0
+offset_top = 60.0
+offset_right = 392.0
+offset_bottom = 76.0
+property = "soundvolume"
+
+[connection signal="toggled" from="MarginContainer/GridContainer/MasterEnabledToggle" to="." method="_on_master_volume_toggle_toggled"]
+[connection signal="toggled" from="MarginContainer/GridContainer/MusicEnabledToggle" to="." method="_on_music_enabled_toggle_toggled"]
+[connection signal="toggled" from="MarginContainer/GridContainer/SoundEnabledToggle" to="." method="_on_sound_enabled_toggle_toggled"]

@@ -13,13 +13,33 @@ _global_script_classes=[{
 "class": &"Bootsplash",
 "language": &"GDScript",
 "path": "res://ui/components/Bootsplash.gd"
+}, {
+"base": "ColorRect",
+"class": &"FadeOverlay",
+"language": &"GDScript",
+"path": "res://ui/overlays/FadeOverlay.gd"
 }]
 _global_script_class_icons={
-"Bootsplash": ""
+"Bootsplash": "",
+"FadeOverlay": ""
 }
 
 [application]
 
 config/name="MyGame"
+run/main_scene="res://scenes/MainMenuScene.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://icon.svg"
+
+[autoload]
+
+UserSettings="*res://settings/UserSettings.gd"
+
+[display]
+
+window/size/viewport_width=576
+window/size/viewport_height=324
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"

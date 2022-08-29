@@ -1,3 +1,84 @@
-[gd_scene format=3 uid="uid://dv2y18ye8j7o0"]
+[gd_scene load_steps=8 format=3 uid="uid://dv2y18ye8j7o0"]
+
+[ext_resource type="Script" path="res://scenes/MainMenuScene.gd" id="1_1foie"]
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="1_oo2y2"]
+[ext_resource type="PackedScene" uid="uid://cik30de5gaaah" path="res://scenes/IngameScene.tscn" id="2_nl5i6"]
+[ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/GameSettingsScene.tscn" id="3_dgs4d"]
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="3_kf1us"]
+[ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="6_drnm6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ikbh"]
+font_size = 8
+font_color = Color(1, 1, 1, 0.486275)
 
 [node name="MainMenuScene" type="Node2D"]
+script = ExtResource("1_1foie")
+game_scene = ExtResource("2_nl5i6")
+settings_scene = ExtResource("3_dgs4d")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
+offset_left = 224.0
+offset_top = 36.0
+offset_right = 352.0
+offset_bottom = 288.0
+
+[node name="Logo" type="TextureRect" parent="UI/CenterContainer/VBoxContainer"]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_oo2y2")
+
+[node name="PlayButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+offset_top = 132.0
+offset_right = 128.0
+offset_bottom = 163.0
+text = "Play Game"
+
+[node name="SettingsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+offset_top = 167.0
+offset_right = 128.0
+offset_bottom = 198.0
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+offset_top = 202.0
+offset_right = 128.0
+offset_bottom = 233.0
+text = "Exit
+"
+
+[node name="Credits" type="MarginContainer" parent="UI/CenterContainer/VBoxContainer"]
+offset_top = 237.0
+offset_right = 128.0
+offset_bottom = 252.0
+
+[node name="Label" type="Label" parent="UI/CenterContainer/VBoxContainer/Credits"]
+offset_right = 128.0
+offset_bottom = 15.0
+text = "put your credits here!"
+label_settings = SubResource("LabelSettings_2ikbh")
+horizontal_alignment = 1
+
+[node name="FadeOverlay" parent="UI" instance=ExtResource("3_kf1us")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_drnm6")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="on_complete_fade_out" from="UI/FadeOverlay" to="." method="_on_fade_overlay_on_complete_fade_out"]
