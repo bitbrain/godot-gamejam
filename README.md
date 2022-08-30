@@ -6,12 +6,35 @@
 
 # 🧪 Features
 
-## 🏃‍♀️ basic movement script for player
-## 🎮 controller support
-## 🚀 automatic [itch.io](https://itch.io) deployment
+## 🏃‍♀️ Basic movement script for player
+
+For 2D games, control the player with WASD or controller either Top-Down (click to move optional) or Sidescroller. For 3D, control the player with a First-Person movement controller.
+
+## 🎮 Controller support
+
+Connect either an XBox controller or Playstation controller to play your game. Including full menu navigation!
+
+## 🌌 Game Settings
+
+This template project comes with game settings out of the box:
+
+- **Audio volume** (Master, Sound, Music)
+- **Screen Resolution**
+- **Window Mode** (Windowed, Borderless, Fullscreen)
+- **V-Sync**
+- **Game Language** (English only by default)
+
+## 🚀 Automatic [itch.io](https://itch.io) deployment
+
+Create a release branch and merge your Git commits into it. Via Github Actions, your game will be automatically deployed to itch.io! For more information, [read this guide](https://bitbra.in/2020/08/01/publish-godot-game-to-itchio.html).
+
 ## ✨ Bootsplash scene support
-## 🎩 basic menu flow (main menu, settings, pause)
-## 🔊 audio volume settings
+
+Either use the default Godot bootsplash or define your own logo bootsplashes!
+
+## 🎩 Basic menu flow (main menu, settings, pause)
+
+This project comes with basic menu navigation that allows you to navigate between ingame, settings and quitting the game.
 
 </br>
 
@@ -30,6 +53,26 @@ Down below is a list of some compatible gamejam formats that permit using this r
 - [Godot Wild Jam](https://itch.io/jam/godot-wild-jam-49)
 
 # 🧱 Customization
+
+This project is built to be as generic as possible and it can be fully adjusted to your needs.
+
+## Defining custom UI theme
+
+todo
+
+## Choosing 2D vs 3D
+
+todo
+
+## Custom boot splash
+
+todo
+
+## Add new language
+
+todo
+
+## Change game settings defaults
 
 todo
 
