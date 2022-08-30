@@ -15,6 +15,20 @@
 
 </br>
 
+# 🔌 Compatible Gamejams
+
+> **Not all gamejams allow project templates!** Please make sure to carefully read the gamejam rules before using this project, otherwise you might **risk of being disqualified**!
+
+Down below is a list of some compatible gamejam formats that permit using this repository as a template:
+
+- [GoGodotJam](https://gogodotjam.com/the-jam/)
+- [Ludum Dare](https://ldjam.com/events/ludum-dare/rules)
+- [GMTK Game Jam](https://itch.io/jam/gmtk-jam-2022)
+- [Brackeys Gamejam](https://itch.io/jam/brackeys-7)
+- [Global Game Jam](https://globalgamejam.org/news/be-cool-rules)
+- [GameDevLondon Summer Jam](https://itch.io/jam/game-dev-london-summer-jam-2021)
+- [Godot Wild Jam](https://itch.io/jam/godot-wild-jam-49)
+
 # 🧱 Customization
 
 todo
