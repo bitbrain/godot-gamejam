@@ -1,14 +1,14 @@
 extends Node2D
 
-@export var main_menu_scene:PackedScene
-
 @onready var overlay:FadeOverlay = %FadeOverlay
+@onready var return_button = %ReturnButton
 
 func _ready():
 	overlay.visible = true
+	return_button.grab_focus()
 
 func _on_fade_overlay_on_complete_fade_out():
-	get_tree().change_scene_to(main_menu_scene)
+	get_tree().change_scene_to_file("res://scenes/MainMenuScene.tscn")
 
 func _on_return_button_pressed():
 	overlay.fade_out()

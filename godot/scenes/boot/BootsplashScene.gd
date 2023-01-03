@@ -7,7 +7,7 @@ extends Control
 @export var next_scene:PackedScene
 @export var interuptable:bool = true
 
-@onready var control = $"%NodeContainer"
+@onready var control = %NodeContainer
 @onready var instance:Node2D = node.instantiate()
 
 func _ready():
@@ -33,4 +33,4 @@ func _fade_out():
 	.finished.connect(_change_scene)
 
 func _change_scene():
-	get_tree().change_scene_to(next_scene)
+	get_tree().change_scene_to_packed(next_scene)

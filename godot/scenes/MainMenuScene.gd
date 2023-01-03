@@ -13,6 +13,8 @@ func _ready() -> void:
 	overlay.visible = true
 	play_button.disabled = game_scene == null
 	settings_button.disabled = settings_scene == null
+	
+	play_button.grab_focus()
 
 func _on_settings_button_pressed():
 	next_scene = settings_scene
@@ -26,4 +28,4 @@ func _on_exit_button_pressed():
 	get_tree().quit()
 
 func _on_fade_overlay_on_complete_fade_out():
-	get_tree().change_scene_to(next_scene)
+	get_tree().change_scene_to_packed(next_scene)

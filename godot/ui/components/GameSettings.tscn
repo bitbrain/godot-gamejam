@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://nbaodrlopo7y"]
+[gd_scene load_steps=4 format=3 uid="uid://nbaodrlopo7y"]
 
 [ext_resource type="PackedScene" uid="uid://cpo1u33eut0i4" path="res://ui/components/FloatRangeGameSettingsOption.tscn" id="1_0gpwr"]
 [ext_resource type="Script" path="res://ui/components/GameSettings.gd" id="1_eje8l"]
+[ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="2_mudwu"]
 
 [node name="GameSettings" type="VBoxContainer"]
 script = ExtResource("1_eje8l")
@@ -9,6 +10,7 @@ script = ExtResource("1_eje8l")
 [node name="Label" type="Label" parent="."]
 offset_right = 392.0
 offset_bottom = 26.0
+theme = ExtResource("2_mudwu")
 text = "Game Settings"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -27,6 +29,7 @@ columns = 4
 [node name="MasterVolumeEnabled" type="Label" parent="MarginContainer/GridContainer"]
 offset_right = 118.0
 offset_bottom = 26.0
+theme = ExtResource("2_mudwu")
 text = "Master Volume"
 
 [node name="MasterEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]

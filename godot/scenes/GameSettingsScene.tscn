@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://g4qhvbvdm62w"]
+[gd_scene load_steps=6 format=3 uid="uid://g4qhvbvdm62w"]
 
 [ext_resource type="Script" path="res://scenes/GameSettingsScene.gd" id="1_3764u"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="1_w6tmj"]
 [ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/GameSettings.tscn" id="2_qsqie"]
+[ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="3_unbh4"]
 [ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="4_7okdb"]
 
 [node name="GameSettingsScene" type="Node2D"]
@@ -30,9 +31,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ReturnButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 offset_top = 130.0
 offset_right = 392.0
 offset_bottom = 161.0
+theme = ExtResource("3_unbh4")
 text = "Return to main menu"
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("1_w6tmj")]
