@@ -6,14 +6,6 @@
 
 # 🧪 Features
 
-## 🏃‍♀️ Basic movement script for player
-
-For 2D games, control the player with WASD or controller either Top-Down (click to move optional) or Sidescroller. For 3D, control the player with a First-Person movement controller.
-
-## 🎮 Controller support
-
-Connect either an XBox controller or Playstation controller to play your game. Including full menu navigation!
-
 ## 🌌 Game Settings
 
 This template project comes with game settings out of the box:
@@ -24,10 +16,6 @@ This template project comes with game settings out of the box:
 - **V-Sync**
 - **Game Language** (English only by default)
 
-## 🚀 Automatic [itch.io](https://itch.io) deployment
-
-Create a release branch and merge your Git commits into it. Via Github Actions, your game will be automatically deployed to itch.io! For more information, [read this guide](https://bitbra.in/2020/08/01/publish-godot-game-to-itchio.html).
-
 ## ✨ Bootsplash scene support
 
 Either use the default Godot bootsplash or define your own logo bootsplashes!
@@ -35,6 +23,20 @@ Either use the default Godot bootsplash or define your own logo bootsplashes!
 ## 🎩 Basic menu flow (main menu, settings, pause)
 
 This project comes with basic menu navigation that allows you to navigate between ingame, settings and quitting the game.
+
+## 💾 Save Game Integration
+
+Automatically saves the state of the game on exit. Starting a new game overrides the existing save game. Any game object that needs to be saved has to be part of the "Persist" group.
+
+## 🌎 Translation support (i18n)
+
+Comes with pre-defined translations that can be extended.
+
+## _🚀 Automatic [itch.io](https://itch.io) deployment_ (coming soon!)
+
+Create a release branch and merge your Git commits into it. Via Github Actions, your game will be automatically deployed to itch.io! For more information, [read this guide](https://bitbra.in/2020/08/01/publish-godot-game-to-itchio.html).
+
+> **⚠ This is not yet supported until Godot reaches Release Candidate status!**
 
 </br>
 
@@ -68,11 +70,15 @@ todo
 
 todo
 
-## Add new language
+## Add new translation
 
 todo
 
 ## Change game settings defaults
+
+todo
+
+## Saving custom attributes
 
 todo
 
