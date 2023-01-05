@@ -8,112 +8,132 @@
 script = ExtResource("1_eje8l")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 392.0
-offset_bottom = 26.0
+layout_mode = 2
 theme = ExtResource("2_mudwu")
+theme_type_variation = &"HeaderLarge"
 text = "Game Settings"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_top = 30.0
-offset_right = 392.0
-offset_bottom = 126.0
+layout_mode = 2
 theme_override_constants/margin_top = 10
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(300, 0)
-offset_top = 10.0
-offset_right = 392.0
-offset_bottom = 96.0
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 8
 columns = 4
 
 [node name="MasterVolumeEnabled" type="Label" parent="MarginContainer/GridContainer"]
-offset_right = 118.0
-offset_bottom = 26.0
+layout_mode = 2
 theme = ExtResource("2_mudwu")
 text = "Master Volume"
 
 [node name="MasterEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
 unique_name_in_owner = true
-offset_left = 122.0
-offset_right = 166.0
-offset_bottom = 26.0
+layout_mode = 2
 button_pressed = true
 
 [node name="MasterVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
-offset_left = 170.0
-offset_right = 288.0
-offset_bottom = 26.0
+layout_mode = 2
 text = "Master Volume
 "
 
 [node name="MasterVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
-offset_left = 292.0
-offset_right = 392.0
-offset_bottom = 16.0
+layout_mode = 2
 property = "mastervolume"
 
 [node name="MusicEnabledLabel" type="Label" parent="MarginContainer/GridContainer"]
-offset_top = 30.0
-offset_right = 118.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "Music Enabled
 "
 
 [node name="MusicEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
 unique_name_in_owner = true
-offset_left = 122.0
-offset_top = 30.0
-offset_right = 166.0
-offset_bottom = 56.0
+layout_mode = 2
 button_pressed = true
 
 [node name="MusicVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
-offset_left = 170.0
-offset_top = 30.0
-offset_right = 288.0
-offset_bottom = 56.0
+layout_mode = 2
 text = "Music Volume
 "
 
 [node name="MusicVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
-offset_left = 292.0
-offset_top = 30.0
-offset_right = 392.0
-offset_bottom = 46.0
+layout_mode = 2
 property = "musicvolume"
 
 [node name="SoundEnabledLabel" type="Label" parent="MarginContainer/GridContainer"]
-offset_top = 60.0
-offset_right = 118.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "Sound Enabled"
 
 [node name="SoundEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
 unique_name_in_owner = true
-offset_left = 122.0
-offset_top = 60.0
-offset_right = 166.0
-offset_bottom = 86.0
+layout_mode = 2
 button_pressed = true
 
 [node name="SoundVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
-offset_left = 170.0
-offset_top = 60.0
-offset_right = 288.0
-offset_bottom = 86.0
+layout_mode = 2
 text = "Sound Volume
 "
 
 [node name="SoundVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
-offset_left = 292.0
-offset_top = 60.0
-offset_right = 392.0
-offset_bottom = 76.0
+layout_mode = 2
 property = "soundvolume"
+
+[node name="Language" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Language"
+
+[node name="LanguageDropdown" type="OptionButton" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Deutsch"
+popup/item_1/id = 1
+
+[node name="Resolution" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="ResolutionDropdown" type="OptionButton" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "720x340"
+popup/item_1/id = 1
+
+[node name="WindowMode" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Window Mode"
+
+[node name="WindowModeDropdown" type="OptionButton" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[node name="VSyncEnabled" type="Label" parent="MarginContainer/GridContainer"]
+layout_mode = 2
+text = "VSync Enabled"
+
+[node name="VsyncEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
 
 [connection signal="toggled" from="MarginContainer/GridContainer/MasterEnabledToggle" to="." method="_on_master_volume_toggle_toggled"]
 [connection signal="toggled" from="MarginContainer/GridContainer/MusicEnabledToggle" to="." method="_on_music_enabled_toggle_toggled"]
 [connection signal="toggled" from="MarginContainer/GridContainer/SoundEnabledToggle" to="." method="_on_sound_enabled_toggle_toggled"]
+[connection signal="toggled" from="MarginContainer/GridContainer/VsyncEnabledToggle" to="." method="_on_master_volume_toggle_toggled"]

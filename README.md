@@ -38,7 +38,11 @@ Create a release branch and merge your Git commits into it. Via Github Actions, 
 
 > **⚠ This is not yet supported until Godot reaches Release Candidate status!**
 
-</br>
+# 🎮 Getting started!
+
+1. Click `Use this template` in Github ([learn more about Template Repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template))
+2. Open the project in Godot Engine 4
+3. Customize it to your needs (see [🧱 Customization](#-customization))
 
 # 🔌 Compatible Gamejams
 
@@ -53,12 +57,6 @@ Down below is a list of some compatible gamejam formats that permit using this r
 - [Global Game Jam](https://globalgamejam.org/news/be-cool-rules)
 - [GameDevLondon Summer Jam](https://itch.io/jam/game-dev-london-summer-jam-2021)
 - [Godot Wild Jam](https://itch.io/jam/godot-wild-jam-49)
-
-# 🎮 Getting started!
-
-1. Click `Use this template` in Github
-2. Open the project in Godot 4
-3. Customize it to your needs (see next section)
 
 
 # 🧱 Customization
@@ -89,7 +87,7 @@ todo
 
 todo
 
-# 🍻 Collaboration
+# 🍻 Contributing
 
 Feel free to raise a pull request or suggest any changes or improvements you would like to see!
 

@@ -19,22 +19,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
-offset_left = 92.0
-offset_top = 81.0
-offset_right = 484.0
-offset_bottom = 242.0
+offset_left = 14.0
+offset_top = 22.0
+offset_right = 561.0
+offset_bottom = 301.0
+theme_override_constants/separation = 20
 
 [node name="GameSettings" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("2_qsqie")]
-offset_right = 392.0
-offset_bottom = 126.0
+offset_right = 547.0
+offset_bottom = 228.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ReturnButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
-offset_top = 130.0
-offset_right = 392.0
-offset_bottom = 161.0
+offset_top = 248.0
+offset_right = 547.0
+offset_bottom = 279.0
 theme = ExtResource("3_unbh4")
 text = "Return to main menu"
 
