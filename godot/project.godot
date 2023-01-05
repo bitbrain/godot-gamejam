@@ -104,6 +104,10 @@ interact={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://i18n/translation.de.translation", "res://i18n/translation.en.translation")
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)

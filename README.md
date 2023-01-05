@@ -11,9 +11,6 @@
 This template project comes with game settings out of the box:
 
 - **Audio volume** (Master, Sound, Music)
-- **Screen Resolution**
-- **Window Mode** (Windowed, Borderless, Fullscreen)
-- **V-Sync**
 - **Game Language** (English only by default)
 
 ## ✨ Bootsplash scene support

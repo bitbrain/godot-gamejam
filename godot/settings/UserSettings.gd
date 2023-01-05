@@ -28,6 +28,7 @@ func _ready():
 	config = ConfigFile.new()
 	config.load(SETTINGS_FILE)
 	_configure_audio()
+	_configure_language()
 	
 func set_value(key, value):
 	config.set_value(SECTION, key, value)
@@ -72,3 +73,7 @@ func _update_volume(property, bus):
 func _mute_bus(property, bus):
 	var enabled = get_value(property)
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), not enabled)
+
+func _configure_language():
+	# TODO
+	pass
