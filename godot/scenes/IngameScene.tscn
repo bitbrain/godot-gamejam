@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=4 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/IngameScene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="1_y6ebv"]
+[ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/PauseOverlay.tscn" id="3_8o178"]
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_objyc")
@@ -10,4 +11,9 @@ script = ExtResource("1_objyc")
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("1_y6ebv")]
 unique_name_in_owner = true
+visible = false
+
+[node name="PauseOverlay" parent="UI" instance=ExtResource("3_8o178")]
+unique_name_in_owner = true
+process_mode = 2
 visible = false
