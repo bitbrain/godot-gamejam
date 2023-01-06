@@ -43,5 +43,4 @@ func _on_sound_enabled_toggle_toggled(button_pressed: bool) -> void:
 
 
 func _on_language_dropdown_item_selected(index: int) -> void:
-	TranslationServer.set_locale(locales[index])
 	UserSettings.set_value("game_locale", locales[index])

@@ -11,6 +11,7 @@ const SOUNDVOLUME_ENABLED = "soundvolume_enabled"
 const MASTERVOLUME = "mastervolume"
 const MUSICVOLUME = "musicvolume"
 const SOUNDVOLUME = "soundvolume"
+const GAME_LANGUAGE = "game_locale"
 
 const AUDIO_BUS_MASTER = "Master"
 const AUDIO_BUS_SOUND = "Sound"
@@ -45,6 +46,8 @@ func set_value(key, value):
 		_mute_bus(MUSICVOLUME_ENABLED, AUDIO_BUS_MUSIC)
 	if key == SOUNDVOLUME_ENABLED:
 		_mute_bus(SOUNDVOLUME_ENABLED, AUDIO_BUS_SOUND)
+	if key == GAME_LANGUAGE:
+		TranslationServer.set_locale(value)
 	emit_signal("on_value_change", key, value)
 	
 func get_value(key):
@@ -75,5 +78,4 @@ func _mute_bus(property, bus):
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), not enabled)
 
 func _configure_language():
-	# TODO
-	pass
+	TranslationServer.set_locale(get_value_with_default(GAME_LANGUAGE, "en")) 
