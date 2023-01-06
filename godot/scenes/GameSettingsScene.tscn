@@ -51,6 +51,3 @@ visible = false
 stream = ExtResource("4_7okdb")
 autoplay = true
 bus = &"Music"
-
-[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="on_complete_fade_out" from="UI/FadeOverlay" to="." method="_on_fade_overlay_on_complete_fade_out"]

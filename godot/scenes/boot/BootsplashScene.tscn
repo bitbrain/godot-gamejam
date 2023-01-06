@@ -32,11 +32,6 @@ grow_vertical = 2
 [node name="NodeContainer" type="Control" parent="CenterContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-anchors_preset = 0
-offset_left = 288.0
-offset_top = 162.0
-offset_right = 288.0
-offset_bottom = 162.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
