@@ -27,46 +27,54 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
 offset_left = 198.0
-offset_top = 19.0
+offset_top = 1.0
 offset_right = 378.0
-offset_bottom = 305.0
+offset_bottom = 323.0
 theme_override_constants/separation = 5
 
 [node name="GameLogo" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("4_fnufg")]
 offset_right = 180.0
 offset_bottom = 148.0
 
-[node name="PlayButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(180, 0)
 offset_top = 153.0
 offset_right = 180.0
 offset_bottom = 184.0
-size_flags_horizontal = 4
-text = "new_game"
+text = "Continue"
 
-[node name="SettingsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 offset_top = 189.0
 offset_right = 180.0
 offset_bottom = 220.0
 size_flags_horizontal = 4
-text = "settings"
+text = "new_game"
 
-[node name="ExitButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(180, 0)
 offset_top = 225.0
 offset_right = 180.0
 offset_bottom = 256.0
 size_flags_horizontal = 4
+text = "settings"
+
+[node name="ExitButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+offset_top = 261.0
+offset_right = 180.0
+offset_bottom = 292.0
+size_flags_horizontal = 4
 text = "leave_game"
 
 [node name="Credits" type="MarginContainer" parent="UI/CenterContainer/VBoxContainer"]
 offset_left = 76.0
-offset_top = 261.0
+offset_top = 297.0
 offset_right = 103.0
-offset_bottom = 286.0
+offset_bottom = 322.0
 size_flags_horizontal = 4
 theme_override_constants/margin_top = 10
 
@@ -86,8 +94,3 @@ visible = false
 stream = ExtResource("6_drnm6")
 autoplay = true
 bus = &"Music"
-
-[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="UI/CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="on_complete_fade_out" from="UI/FadeOverlay" to="." method="_on_fade_overlay_on_complete_fade_out"]
