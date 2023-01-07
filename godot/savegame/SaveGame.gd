@@ -44,6 +44,9 @@ static func save_game(tree:SceneTree):
 		if not node.get_path().is_empty():
 			save_data["path"] = node.get_path()
 			
+		if not node.get_parent().get_path().is_empty():
+			save_data["parent"] = node.get_parent().get_path()
+			
 		if "position" in node:
 			save_data["pos_x"] = node.position.x
 			save_data["pos_y"] = node.position.y
@@ -58,6 +61,12 @@ static func save_game(tree:SceneTree):
 			save_data["scale_y"] = node.scale.y
 			if node.scale is Vector3:
 				save_data["scale_z"] = node.scale.z
+				
+		save_data["visible"] = node.visible
+		save_data["modulate_r"] = node.modulate.r
+		save_data["modulate_g"] = node.modulate.g
+		save_data["modulate_b"] = node.modulate.b
+		save_data["modulate_a"] = node.modulate.a
 
 		# Call the node's save function.
 		if node.has_method("save_data"):
@@ -79,11 +88,8 @@ static func load_game(tree:SceneTree) -> void:
 		
 	var save_nodes = tree.get_nodes_in_group(SAVE_GROUP_NAME)
 	
-	var nodes_by_scene_file_path = {}
 	var nodes_by_path = {}
 	for node in save_nodes:
-		if not node.scene_file_path.is_empty():
-			nodes_by_path[node.scene_file_path] = node
 		if not node.get_path().is_empty():
 			nodes_by_path[node.get_path()] = node
 
@@ -107,10 +113,13 @@ static func load_game(tree:SceneTree) -> void:
 		
 		if "path" in save_data and nodes_by_path.has(NodePath(save_data.path)):
 			node = nodes_by_path[NodePath(save_data.path)]
-		elif "scene_file_path" in save_data and nodes_by_scene_file_path.has(save_data.scene_file_path):
-			node = nodes_by_scene_file_path[save_data.scene_file_path]
+		elif "path" in save_data and "parent" in save_data and "scene_file_path" in save_data:
+			# node is not present in tree so it was dynamically added at runtime
+			var parent = tree.root.get_node(NodePath(save_data["parent"]))
+			node = load(save_data["scene_file_path"]).instantiate()
+			parent.add_child(node)
 		else:
-			push_warning("skipping loading node from save game: node got removed from tree!")
+			push_warning("skipping loading node from save game: node got moved.")
 			continue
 
 		if "position" in node:
@@ -127,6 +136,9 @@ static func load_game(tree:SceneTree) -> void:
 				node.scale = Vector2(save_data["scale_x"], save_data["scale_y"])
 			elif node.scale is Vector3:
 				node.scale = Vector3(save_data["scale_x"], save_data["scale_y"], save_data["scale_z"])
+				
+		node.visible = save_data["visible"]
+		node.modulate = Color(save_data["modulate_r"], save_data["modulate_g"], save_data["modulate_b"], save_data["modulate_a"])
 				
 		if node.has_method("load_data") and save_data.has("node_data"):
 			node.call("load_data", save_data["node_data"])
