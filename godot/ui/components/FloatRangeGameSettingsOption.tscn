@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpo1u33eut0i4"]
+
+[ext_resource type="Script" path="res://ui/components/FloatRangeGameSettingsOption.gd" id="1_hqqh3"]
+
+[node name="FloatRangeGameSettingsOption" type="HSlider"]
+custom_minimum_size = Vector2(100, 0)
+script = ExtResource("1_hqqh3")
+
+[connection signal="value_changed" from="." to="." method="_on_float_range_game_settings_option_value_changed"]

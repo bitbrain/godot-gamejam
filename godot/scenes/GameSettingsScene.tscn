@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://g4qhvbvdm62w"]
+
+[ext_resource type="Script" path="res://scenes/GameSettingsScene.gd" id="1_3764u"]
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="1_w6tmj"]
+[ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/GameSettings.tscn" id="2_qsqie"]
+[ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="3_unbh4"]
+[ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="4_7okdb"]
+
+[node name="GameSettingsScene" type="Node2D"]
+script = ExtResource("1_3764u")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
+offset_top = 36.0
+offset_right = 648.0
+offset_bottom = 287.0
+theme_override_constants/separation = 20
+
+[node name="SettingsLabel" type="Label" parent="UI/CenterContainer/VBoxContainer"]
+offset_right = 648.0
+offset_bottom = 42.0
+theme_type_variation = &"HeaderLarge"
+text = "settings"
+
+[node name="GameSettings" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("2_qsqie")]
+offset_top = 62.0
+offset_right = 648.0
+offset_bottom = 200.0
+
+[node name="ReturnButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+offset_top = 220.0
+offset_right = 648.0
+offset_bottom = 251.0
+theme = ExtResource("3_unbh4")
+text = "return_to_main"
+
+[node name="FadeOverlay" parent="UI" instance=ExtResource("1_w6tmj")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7okdb")
+autoplay = true
+bus = &"Music"

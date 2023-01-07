@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cik30de5gaaah"]
+
+[ext_resource type="Script" path="res://scenes/IngameScene.gd" id="1_objyc"]
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="1_y6ebv"]
+[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_h1yxu"]
+[ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/PauseOverlay.tscn" id="3_8o178"]
+[ext_resource type="Script" path="res://scenes/NodeExample.gd" id="3_a5686"]
+
+[node name="IngameScene" type="Node2D"]
+script = ExtResource("1_objyc")
+
+[node name="NodeExample" type="Sprite2D" parent="." groups=["Persist"]]
+texture = ExtResource("2_h1yxu")
+script = ExtResource("3_a5686")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FadeOverlay" parent="UI" instance=ExtResource("1_y6ebv")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseOverlay" parent="UI" instance=ExtResource("3_8o178")]
+unique_name_in_owner = true
+process_mode = 2
+visible = false

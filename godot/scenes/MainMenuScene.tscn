@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://dv2y18ye8j7o0"]
+
+[ext_resource type="Script" path="res://scenes/MainMenuScene.gd" id="1_1foie"]
+[ext_resource type="PackedScene" uid="uid://cik30de5gaaah" path="res://scenes/IngameScene.tscn" id="2_nl5i6"]
+[ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/GameSettingsScene.tscn" id="3_dgs4d"]
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="3_kf1us"]
+[ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/GameLogo.tscn" id="4_fnufg"]
+[ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="6_drnm6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ikbh"]
+font_size = 8
+font_color = Color(1, 1, 1, 0.486275)
+
+[node name="MainMenuScene" type="Node2D"]
+script = ExtResource("1_1foie")
+game_scene = ExtResource("2_nl5i6")
+settings_scene = ExtResource("3_dgs4d")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="GameLogo" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("4_fnufg")]
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continue"
+
+[node name="NewGameButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "new_game"
+
+[node name="SettingsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "settings"
+
+[node name="ExitButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "leave_game"
+
+[node name="Credits" type="MarginContainer" parent="UI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 10
+
+[node name="Label" type="Label" parent="UI/CenterContainer/VBoxContainer/Credits"]
+layout_mode = 2
+text = "credits"
+label_settings = SubResource("LabelSettings_2ikbh")
+horizontal_alignment = 1
+
+[node name="FadeOverlay" parent="UI" instance=ExtResource("3_kf1us")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_drnm6")
+autoplay = true
+bus = &"Music"
