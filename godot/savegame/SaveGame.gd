@@ -53,20 +53,26 @@ static func save_game(tree:SceneTree):
 			if node.position is Vector3:
 				save_data["pos_z"] = node.position.z
 				
-		if "rotation" in node:
+		if node is Node2D:
 			save_data["rotation"] = node.rotation
-			
+		elif node is Node3D:
+			save_data["rotation_x"] = node.rotation.x
+			save_data["rotation_y"] = node.rotation.y
+			save_data["rotation_z"] = node.rotation.z
+
 		if "scale" in node:
 			save_data["scale_x"] = node.scale.x
 			save_data["scale_y"] = node.scale.y
 			if node.scale is Vector3:
 				save_data["scale_z"] = node.scale.z
-				
+	
 		save_data["visible"] = node.visible
-		save_data["modulate_r"] = node.modulate.r
-		save_data["modulate_g"] = node.modulate.g
-		save_data["modulate_b"] = node.modulate.b
-		save_data["modulate_a"] = node.modulate.a
+
+		if node is CanvasItem:
+			save_data["modulate_r"] = node.modulate.r
+			save_data["modulate_g"] = node.modulate.g
+			save_data["modulate_b"] = node.modulate.b
+			save_data["modulate_a"] = node.modulate.a
 
 		# Call the node's save function.
 		if node.has_method("save_data"):
@@ -128,8 +134,10 @@ static func load_game(tree:SceneTree) -> void:
 			elif node.scale is Vector3:
 				node.position = Vector3(save_data["pos_x"], save_data["pos_y"], save_data["pos_z"])
 			
-		if "rotation" in node:
+		if node is Node2D:
 			node.rotation = save_data["rotation"]
+		elif node is Node3D:
+			node.rotation = Vector3(save_data["rotation_x"], save_data["rotation_y"], save_data["rotation_z"])
 			
 		if "scale" in node:
 			if node.scale is Vector2:
@@ -138,7 +146,9 @@ static func load_game(tree:SceneTree) -> void:
 				node.scale = Vector3(save_data["scale_x"], save_data["scale_y"], save_data["scale_z"])
 				
 		node.visible = save_data["visible"]
-		node.modulate = Color(save_data["modulate_r"], save_data["modulate_g"], save_data["modulate_b"], save_data["modulate_a"])
+		
+		if node is CanvasItem:
+			node.modulate = Color(save_data["modulate_r"], save_data["modulate_g"], save_data["modulate_b"], save_data["modulate_a"])
 				
 		if node.has_method("load_data") and save_data.has("node_data"):
 			node.call("load_data", save_data["node_data"])
