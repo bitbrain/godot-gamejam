@@ -1,9 +1,11 @@
 keys,en,de
 credits,Credits here,Credits hier
 new_game,New Game,Neues Spiel
+continue,Continue,Fortfahren
 settings,Game Settings,Einstellungen
 leave_game,Leave game,Spiel verlassen
 return_to_main,Return to main menu,Zum Hauptmenü
+return_to_menu,Back to menu,Zurück
 settings_volume_master_enabled,Master Enabled,Lautstärke an
 settings_volume_master,Master Volume,Lautstärke (Allgemein)
 settings_volume_music_enabled,Music enabled,Musik an
@@ -11,3 +13,5 @@ settings_volume_music,Music Volume,Musik Lautstärke
 settings_volume_sound_enabled,Sound enabled,Sound an
 settings_volume_sound,Sound Volume,Sound Lautstärke
 settings_language,Game Language,Spielsprache
+game_paused,Game paused,Spiel pausiert
+resume_game,Resume game,Weiterspielen

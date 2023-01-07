@@ -12,16 +12,16 @@ grow_vertical = 2
 script = ExtResource("1_q2yda")
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
-offset_left = 196.0
+offset_left = 195.0
 offset_top = 84.0
 offset_right = 380.0
 offset_bottom = 239.0
 
 [node name="Label" type="Label" parent="VBoxContainer3"]
-offset_right = 184.0
+offset_right = 185.0
 offset_bottom = 42.0
 theme_type_variation = &"HeaderLarge"
-text = "Game paused"
+text = "game_paused"
 horizontal_alignment = 1
 
 [node name="SettingsContainer" type="VBoxContainer" parent="VBoxContainer3"]
@@ -40,31 +40,31 @@ unique_name_in_owner = true
 offset_top = 142.0
 offset_right = 648.0
 offset_bottom = 173.0
-text = "Back to menu"
+text = "return_to_menu"
 
 [node name="MenuContainer" type="VBoxContainer" parent="VBoxContainer3"]
 unique_name_in_owner = true
 offset_top = 46.0
-offset_right = 184.0
+offset_right = 185.0
 offset_bottom = 155.0
 theme_override_constants/separation = 8
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
-offset_right = 184.0
+offset_right = 185.0
 offset_bottom = 31.0
-text = "Resume game"
+text = "resume_game"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
 offset_top = 39.0
-offset_right = 184.0
+offset_right = 185.0
 offset_bottom = 70.0
-text = "Settings"
+text = "settings"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer3/MenuContainer"]
 unique_name_in_owner = true
 offset_top = 78.0
-offset_right = 184.0
+offset_right = 185.0
 offset_bottom = 109.0
-text = "Exit Game"
+text = "leave_game"
