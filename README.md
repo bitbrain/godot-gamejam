@@ -6,30 +6,34 @@
 
 # 🧪 Features
 
-## 🌌 Game Settings
+### 🌌 **Game Settings**
 
 This template project comes with game settings out of the box:
 
 - **Audio volume** (Master, Sound, Music)
 - **Game Language** (English only by default)
 
-## ✨ Bootsplash scene support
+### ✨ **Bootsplash scene support**
 
 Either use the default Godot bootsplash or define your own logo bootsplashes!
 
-## 🎩 Basic menu flow (main menu, settings, pause)
+### 🎩 Basic menu flow (main menu, settings, pause)
 
 This project comes with basic menu navigation that allows you to navigate between ingame, settings and quitting the game.
 
-## 💾 Save Game Integration
+### 💾 Save Game Integration
 
 Automatically saves the state of the game on exit. Starting a new game overrides the existing save game. Any game object that needs to be saved has to be part of the "Persist" group.
 
-## 🌎 Translation support (i18n)
+### 🌎 Translation support (i18n)
 
 Comes with pre-defined translations that can be extended.
 
-## _🚀 Automatic [itch.io](https://itch.io) deployment_ (coming soon!)
+### ⏸ Pause Menu
+
+The `IngameScene` supports a pause menu to temporarily pause the game.
+
+### _🚀 Automatic [itch.io](https://itch.io) deployment_ (coming soon!)
 
 Create a release branch and merge your Git commits into it. Via Github Actions, your game will be automatically deployed to itch.io! For more information, [read this guide](https://bitbra.in/2020/08/01/publish-godot-game-to-itchio.html).
 
@@ -40,6 +44,7 @@ Create a release branch and merge your Git commits into it. Via Github Actions, 
 1. Click `Use this template` in Github ([learn more about Template Repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template))
 2. Open the project in Godot Engine 4
 3. Customize it to your needs (see [🧱 Customization](#-customization))
+4. Open the `IngameScene` and start building your game!
 
 # 🔌 Compatible Gamejams
 
@@ -62,27 +67,44 @@ This project is built to be as generic as possible and it can be fully adjusted 
 
 ## Defining custom UI theme
 
-todo
+Search for the file `theme.tres` and open it. The [Godot theme editor](https://docs.godotengine.org/en/stable/tutorials/ui/gui_using_theme_editor.html) should appear. Feel free to customise the UI to your needs. Any `Control` node will use this theme by default:
+
+![custom-theme](docs/custom-theme.png)
 
 ## Choosing 2D vs 3D
 
-todo
+This toolkit is not limited to either 2D or 3D. It has been kept vague on purpose so feel free to build 2D or 3D scenes with it!
 
 ## Custom boot splash
 
-todo
+Within Godot Engine, head to `scenes/boot` to access boot splash scenes. You can create your custom bootsplash by either modifying `GodotBootsplashScene` or creating a new node of type `Control`. Add `BootsplashScene` as a child and configure its properties as follows:
+
+- `Fade Duration` - the amount of time in milliseconds to fade in/out the bootsplash.
+- `Stay Duration` - the amount of time in milliseconds the bootsplash should stay.
+- `Node` - the node/scene that should be displayed during the bootsplash.
+- `Next Scene` - the next scene that should be loaded after the bootsplash has finished.
+- `Interruptable ` - wether the bootsplash is interruptable or not.
 
 ## Add new translation
 
-todo
+You will find a translation file in `i18n/translation.csv`. Feel free to extend it to your needs. Godot will automatically pickup the translations if you use them inside your control nodes like `Button` or `Label`. In case you need to manually translate something in a script, call the `tr()` function. 
 
-## Change game settings defaults
+In case you want to add a new language, add a new column to the `translation.csv` file.
 
-todo
+## Game Settings
 
-## Saving custom attributes
+The game settings are managed in `UserSettings.gd`. You can change the defaults by updating `USER_SETTING_DEFAULTS`. You can also add additional properties to extend them.
 
-todo
+The `GameSettings` node and the `GameSettings.gd` script connects to the `UserSettings` by setting it/loading from it.
+
+## Save game configuration
+
+By default, save games are enabled. You can toggle support for save games inside `SaveGame.gd` by changing the `ENABLED` property.
+
+The save game saves any node inside the `IngameScene` that is part of the `Persist` group ([learn more about groups in Godot](https://docs.godotengine.org/en/stable/tutorials/scripting/groups.html)). The save game system will save existing nodes but also nodes that were dynamically added to the scene at runtime!
+
+Currently, the game will only save the scene when exiting the game via the pause menu.
+
 
 # 🍻 Contributing
 

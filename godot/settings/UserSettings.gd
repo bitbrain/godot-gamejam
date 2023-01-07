@@ -18,9 +18,13 @@ const AUDIO_BUS_SOUND = "Sound"
 const AUDIO_BUS_MUSIC = "Music"
 	
 var USER_SETTING_DEFAULTS = {
+	MASTERVOLUME_ENABLED:true,
+	MUSICVOLUME_ENABLED:true,
+	SOUNDVOLUME_ENABLED:true,
 	MASTERVOLUME:100,
 	MUSICVOLUME:70,
-	SOUNDVOLUME:100
+	SOUNDVOLUME:100,
+	GAME_LANGUAGE:"en"
 }
 
 var config:ConfigFile
@@ -70,12 +74,12 @@ func _configure_audio():
 	_mute_bus(SOUNDVOLUME_ENABLED, AUDIO_BUS_SOUND)
 	
 func _update_volume(property, bus):
-	var current = (get_value(property) -100) / 2
+	var current = (get_value_with_default(property, USER_SETTING_DEFAULTS[property]) -100) / 2
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), current)
 
 func _mute_bus(property, bus):
-	var enabled = get_value(property)
+	var enabled = get_value_with_default(property, USER_SETTING_DEFAULTS[property])
 	AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), not enabled)
 
 func _configure_language():
-	TranslationServer.set_locale(get_value_with_default(GAME_LANGUAGE, "en")) 
+	TranslationServer.set_locale(get_value_with_default(GAME_LANGUAGE, USER_SETTING_DEFAULTS[GAME_LANGUAGE])) 
