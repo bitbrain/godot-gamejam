@@ -1,25 +1,62 @@
-[gd_scene load_steps=6 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=11 format=3 uid="uid://pesyc6cncctu"]
 
 [ext_resource type="Script" path="res://scenes/IngameScene.gd" id="1_objyc"]
-[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="1_y6ebv"]
-[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_h1yxu"]
-[ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/PauseOverlay.tscn" id="3_8o178"]
-[ext_resource type="Script" path="res://scenes/NodeExample.gd" id="3_a5686"]
+[ext_resource type="Texture2D" uid="uid://3vv0q57vna8s" path="res://world/checkboard.png" id="2_6arok"]
+[ext_resource type="Texture2D" uid="uid://c8gwu436qdj6l" path="res://world/frog.png" id="2_ad4i7"]
+[ext_resource type="Script" path="res://world/PixelFrog.gd" id="3_1wven"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3mc0"]
+atlas = ExtResource("2_ad4i7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql8xr"]
+atlas = ExtResource("2_ad4i7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weq6s"]
+atlas = ExtResource("2_ad4i7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egmsl"]
+atlas = ExtResource("2_ad4i7")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rrrs"]
+atlas = ExtResource("2_ad4i7")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xebe3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3mc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ql8xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weq6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egmsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rrrs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_objyc")
 
-[node name="NodeExample" type="Sprite2D" parent="." groups=["Persist"]]
-texture = ExtResource("2_h1yxu")
-script = ExtResource("3_a5686")
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_6arok")
+
+[node name="PixelFrog" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_xebe3")
+playing = true
+script = ExtResource("3_1wven")
 
 [node name="UI" type="CanvasLayer" parent="."]
-
-[node name="FadeOverlay" parent="UI" instance=ExtResource("1_y6ebv")]
-unique_name_in_owner = true
-visible = false
-
-[node name="PauseOverlay" parent="UI" instance=ExtResource("3_8o178")]
-unique_name_in_owner = true
-process_mode = 2
-visible = false

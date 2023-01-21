@@ -8,34 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Control",
-"class": &"Bootsplash",
-"language": &"GDScript",
-"path": "res://ui/components/Bootsplash.gd"
-}, {
-"base": "Control",
-"class": &"BootsplashScene",
-"language": &"GDScript",
-"path": "res://scenes/boot/BootsplashScene.gd"
-}, {
-"base": "ColorRect",
-"class": &"FadeOverlay",
-"language": &"GDScript",
-"path": "res://ui/overlays/FadeOverlay.gd"
-}, {
-"base": "Node",
-"class": &"SaveGame",
-"language": &"GDScript",
-"path": "res://savegame/SaveGame.gd"
-}]
-_global_script_class_icons={
-"Bootsplash": "",
-"BootsplashScene": "",
-"FadeOverlay": "",
-"SaveGame": ""
-}
-
 [application]
 
 config/name="MyGame"
@@ -49,12 +21,16 @@ UserSettings="*res://settings/UserSettings.gd"
 
 [display]
 
-window/size/viewport_width=576
-window/size/viewport_height=324
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_height"
+window/stretch/aspect="keep_width"
+
+[editor]
+
+export/convert_text_resources_to_binary=true
 
 [gui]
 
@@ -121,4 +97,7 @@ locale/translations=PackedStringArray("res://i18n/translation.de.translation", "
 
 [rendering]
 
+textures/decals/filter=0
+textures/light_projectors/filter=0
 environment/defaults/default_clear_color=Color(0.211765, 0.239216, 0.321569, 1)
+textures/canvas_textures/default_texture_filter=0

@@ -1,4 +1,5 @@
-extends Sprite2D
+@tool
+extends AnimatedSprite2D
 
 # specify in nodes to load data
 # from save game for this node
