@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="1_co1qn"]
 [ext_resource type="PackedScene" uid="uid://ehrvsjvp61gu" path="res://scenes/boot/BootsplashScene.tscn" id="1_xxjpt"]
 [ext_resource type="PackedScene" uid="uid://cmmr5jbylu08i" path="res://scenes/boot/godot/GodotLogo.tscn" id="2_sxu4s"]
-[ext_resource type="PackedScene" uid="uid://dv2y18ye8j7o0" path="res://scenes/MainMenuScene.tscn" id="3_m4o2e"]
+[ext_resource type="PackedScene" uid="uid://crarg0brt1oxe" path="res://scenes/MainMenuScene.tscn" id="3_m4o2e"]
 
 [node name="GodotBootsplashScene" type="Control"]
 layout_mode = 3
@@ -15,6 +15,7 @@ grow_vertical = 2
 theme = ExtResource("1_co1qn")
 
 [node name="BootsplashScene" parent="." instance=ExtResource("1_xxjpt")]
+layout_mode = 1
 theme = ExtResource("1_co1qn")
 node = ExtResource("2_sxu4s")
 next_scene = ExtResource("3_m4o2e")

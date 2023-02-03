@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://crarg0brt1oxe"]
+[gd_scene load_steps=7 format=3 uid="uid://crarg0brt1oxe"]
 
 [ext_resource type="Script" path="res://scenes/MainMenuScene.gd" id="1_1foie"]
 [ext_resource type="PackedScene" uid="uid://kd1125wq8ilo" path="res://scenes/PixelPerfectScene.tscn" id="2_17b4h"]
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/GameSettingsScene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="3_kf1us"]
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/GameLogo.tscn" id="4_fnufg"]
-[ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="6_drnm6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ikbh"]
 font_size = 8
@@ -74,6 +73,5 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_drnm6")
 autoplay = true
 bus = &"Music"
