@@ -5,11 +5,11 @@
 [ext_resource type="Script" path="res://scenes/PixelPerfectContainer.gd" id="2_eg5hv"]
 [ext_resource type="Shader" path="res://shaders/pixel-position.gdshader" id="2_kaswy"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/PauseOverlay.tscn" id="3_8o178"]
-[ext_resource type="PackedScene" uid="uid://pesyc6cncctu" path="res://scenes/IngameScene.tscn" id="4_a03mu"]
+[ext_resource type="PackedScene" uid="uid://pesyc6cncctu" path="res://scenes/IngameScene.tscn" id="4_o7x7h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i1l4e"]
 shader = ExtResource("2_kaswy")
-shader_parameter/offset = null
+shader_parameter/offset = Vector2(0, 0)
 
 [node name="PixelPerfectScene" type="Node2D"]
 script = ExtResource("1_lwybb")
@@ -30,13 +30,11 @@ snap_2d_transforms_to_pixel = true
 size = Vector2i(162, 92)
 render_target_update_mode = 4
 
-[node name="IngameScene" parent="PixelPerfectContainer/PixelPerfectViewport" instance=ExtResource("4_a03mu")]
-unique_name_in_owner = true
-
 [node name="Camera2D" type="Camera2D" parent="PixelPerfectContainer/PixelPerfectViewport"]
 unique_name_in_owner = true
-current = true
-position_smoothing_enabled = true
+
+[node name="IngameScene" parent="PixelPerfectContainer/PixelPerfectViewport" instance=ExtResource("4_o7x7h")]
+unique_name_in_owner = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 

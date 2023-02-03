@@ -55,8 +55,7 @@ script = ExtResource("1_objyc")
 texture = ExtResource("2_6arok")
 
 [node name="PixelFrog" type="AnimatedSprite2D" parent="."]
-frames = SubResource("SpriteFrames_xebe3")
-playing = true
+sprite_frames = SubResource("SpriteFrames_xebe3")
 script = ExtResource("3_1wven")
 
 [node name="UI" type="CanvasLayer" parent="."]
