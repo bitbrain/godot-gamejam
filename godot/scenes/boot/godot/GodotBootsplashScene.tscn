@@ -15,6 +15,7 @@ grow_vertical = 2
 theme = ExtResource("1_co1qn")
 
 [node name="BootsplashScene" parent="." instance=ExtResource("1_xxjpt")]
+layout_mode = 1
 theme = ExtResource("1_co1qn")
 node = ExtResource("2_sxu4s")
 next_scene = ExtResource("3_m4o2e")
