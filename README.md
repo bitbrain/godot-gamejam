@@ -48,7 +48,7 @@ Create a release branch and merge your Git commits into it. Via Github Actions, 
 
 # 🔌 Compatible Gamejams
 
-> **Not all gamejams allow project templates!** Please make sure to carefully read the gamejam rules before using this project, otherwise you might **risk of being disqualified**!
+> **Not all gamejams allow project templates!** Please make sure to carefully read the gamejam rules before using this project, otherwise you might **risk being disqualified**!
 
 Down below is a list of some compatible gamejam formats that permit using this repository as a template:
 
