@@ -119,6 +119,7 @@ static func load_game(tree:SceneTree) -> void:
 		
 		if "path" in save_data and nodes_by_path.has(NodePath(save_data.path)):
 			node = nodes_by_path[NodePath(save_data.path)]
+			nodes_by_path.erase(NodePath(save_data.path))
 		elif "path" in save_data and "parent" in save_data and "scene_file_path" in save_data:
 			# node is not present in tree so it was dynamically added at runtime
 			var parent = tree.root.get_node(NodePath(save_data["parent"]))
@@ -145,10 +146,17 @@ static func load_game(tree:SceneTree) -> void:
 			elif node.scale is Vector3:
 				node.scale = Vector3(save_data["scale_x"], save_data["scale_y"], save_data["scale_z"])
 				
-		node.visible = save_data["visible"]
+		if save_data.has("visible") and "visible" in node:
+			node.visible = save_data["visible"]
 		
 		if node is CanvasItem:
 			node.modulate = Color(save_data["modulate_r"], save_data["modulate_g"], save_data["modulate_b"], save_data["modulate_a"])
 				
 		if node.has_method("load_data") and save_data.has("node_data"):
 			node.call("load_data", save_data["node_data"])
+	
+	# delete any node from scene that was not persisted into the save file
+	# but is currently tagged as "Persisted" -> this means node got removed in the meantime
+	for key in nodes_by_path:
+		var node = nodes_by_path[key]
+		node.queue_free()
