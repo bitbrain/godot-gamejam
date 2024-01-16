@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx5xs0x7y0i3o"]
+
+[ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="1_il62e"]
+[ext_resource type="PackedScene" uid="uid://ehrvsjvp61gu" path="res://scenes/boot/bootsplash_scene.tscn" id="2_ixabf"]
+[ext_resource type="PackedScene" uid="uid://cmmr5jbylu08i" path="res://scenes/boot/godot/godot_logo.tscn" id="3_e0rf4"]
+[ext_resource type="PackedScene" uid="uid://dv2y18ye8j7o0" path="res://scenes/main_menu_scene.tscn" id="4_n5qhh"]
+
+[node name="GodotBootsplashScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_il62e")
+
+[node name="BootsplashScene" parent="." instance=ExtResource("2_ixabf")]
+layout_mode = 1
+theme = ExtResource("1_il62e")
+node = ExtResource("3_e0rf4")
+next_scene = ExtResource("4_n5qhh")

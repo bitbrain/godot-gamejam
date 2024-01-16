@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cik30de5gaaah"]
 
-[ext_resource type="Script" path="res://scenes/IngameScene.gd" id="1_objyc"]
-[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="1_y6ebv"]
+[ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
 [ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_h1yxu"]
-[ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/PauseOverlay.tscn" id="3_8o178"]
-[ext_resource type="Script" path="res://scenes/NodeExample.gd" id="3_a5686"]
+[ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
+[ext_resource type="Script" path="res://scenes/node_example.gd" id="3_a5686"]
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_objyc")

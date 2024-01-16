@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://nl1cn61u3wd"]
 
-[ext_resource type="PackedScene" uid="uid://bo4ehnumovbi" path="res://ui/components/Bootsplash.tscn" id="1_gflph"]
+[ext_resource type="PackedScene" uid="uid://bo4ehnumovbi" path="res://ui/components/bootsplash.tscn" id="1_gflph"]
 
 [node name="IntroScene" type="Node2D"]
 

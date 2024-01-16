@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="MyGame"
-run/main_scene="res://scenes/boot/godot/GodotBootsplashScene.tscn"
+run/main_scene="res://scenes/boot/godot/godot_bootsplash_scene.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.svg"
 
 [autoload]
 
-UserSettings="*res://settings/UserSettings.gd"
+UserSettings="*res://settings/user_settings.gd"
 
 [display]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://g4qhvbvdm62w"]
 
-[ext_resource type="Script" path="res://scenes/GameSettingsScene.gd" id="1_3764u"]
-[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/FadeOverlay.tscn" id="1_w6tmj"]
-[ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/GameSettings.tscn" id="2_qsqie"]
+[ext_resource type="Script" path="res://scenes/game_settings_scene.gd" id="1_3764u"]
+[ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_w6tmj"]
+[ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_qsqie"]
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="3_unbh4"]
 [ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="4_7okdb"]
 

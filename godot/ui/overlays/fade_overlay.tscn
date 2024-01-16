@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkk87o2ooo6at"]
 
-[ext_resource type="Script" path="res://ui/overlays/FadeOverlay.gd" id="1_0elae"]
+[ext_resource type="Script" path="res://ui/overlays/fade_overlay.gd" id="1_0elae"]
 
 [node name="FadeOverlay" type="ColorRect"]
 anchors_preset = 15
