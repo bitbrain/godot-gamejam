@@ -33,11 +33,11 @@ Comes with pre-defined translations that can be extended.
 
 The `IngameScene` supports a pause menu to temporarily pause the game.
 
-### _🚀 Automatic [itch.io](https://itch.io) deployment_ (coming soon!)
+### _🚀 Automatic [itch.io](https://itch.io) deployment_
 
 Create a release branch and merge your Git commits into it. Via Github Actions, your game will be automatically deployed to itch.io! For more information, [read this guide](https://bitbra.in/2020/08/01/publish-godot-game-to-itchio.html).
 
-> **⚠ This is not yet supported until Godot reaches Release Candidate status!**
+Visit https://github.com/marketplace/actions/godot-ci to setup automatic deployment to itch.io!
 
 # 🎮 Getting started!
 
@@ -59,7 +59,6 @@ Down below is a list of some compatible gamejam formats that permit using this r
 - [Global Game Jam](https://globalgamejam.org/news/be-cool-rules)
 - [GameDevLondon Summer Jam](https://itch.io/jam/game-dev-london-summer-jam-2021)
 - [Godot Wild Jam](https://itch.io/jam/godot-wild-jam-49)
-
 
 # 🧱 Customization
 
@@ -87,7 +86,7 @@ Within Godot Engine, head to `scenes/boot` to access boot splash scenes. You can
 
 ## Add new translation
 
-You will find a translation file in `i18n/translation.csv`. Feel free to extend it to your needs. Godot will automatically pickup the translations if you use them inside your control nodes like `Button` or `Label`. In case you need to manually translate something in a script, call the `tr()` function. 
+You will find a translation file in `i18n/translation.csv`. Feel free to extend it to your needs. Godot will automatically pickup the translations if you use them inside your control nodes like `Button` or `Label`. In case you need to manually translate something in a script, call the `tr()` function.
 
 In case you want to add a new language, add a new column to the `translation.csv` file.
 
@@ -104,7 +103,6 @@ By default, save games are enabled. You can toggle support for save games inside
 The save game saves any node inside the `IngameScene` that is part of the `Persist` group ([learn more about groups in Godot](https://docs.godotengine.org/en/stable/tutorials/scripting/groups.html)). The save game system will save existing nodes but also nodes that were dynamically added to the scene at runtime!
 
 Currently, the game will only save the scene when exiting the game via the pause menu.
-
 
 # 🍻 Contributing
 
