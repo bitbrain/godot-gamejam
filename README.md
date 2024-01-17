@@ -35,9 +35,13 @@ The `IngameScene` supports a pause menu to temporarily pause the game.
 
 ### _🚀 Automatic [itch.io](https://itch.io) deployment_
 
-Create a release branch and merge your Git commits into it. Via Github Actions, your game will be automatically deployed to itch.io! For more information, [read this guide](https://bitbra.in/2020/08/01/publish-godot-game-to-itchio.html).
+This templates comes with automatic deployment to itch.io for MacOS, Windows, Linux and HTML5 (Web). Delete `.github/workflows/godot-ci.yml` in case you are not interested in deploying to itch.io!
 
-Visit https://github.com/marketplace/actions/godot-ci to setup automatic deployment to itch.io!
+1. generate new API key in your itch.io settings and setup your `BUTLER_API_KEY` secret - [learn more](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions)
+2. create a new game on itch.io
+3. setup `ITCHIO_GAME` and `ITCHIO_USERNAME` secrets in Github and assign them to your itch.io username and game name
+
+[See working example here](https://github.com/bitbrain/ggj-2023/blob/main/.github/workflows/godot-ci.yml)
 
 # 🎮 Getting started!
 
