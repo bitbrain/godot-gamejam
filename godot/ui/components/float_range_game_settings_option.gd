@@ -7,7 +7,7 @@ var initialised = false
 func _ready():
 	value = UserSettings.get_value(property)
 
-func _on_float_range_game_settings_option_value_changed(value):
+func _on_float_range_game_settings_option_value_changed(val):
 	if !initialised:
 		initialised = true
-	UserSettings.set_value(property, value)
+	UserSettings.set_value(property, val)
