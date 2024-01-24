@@ -11,7 +11,7 @@ func _ready():
 	return_button.grab_focus()
 
 func _on_fade_overlay_on_complete_fade_out():
-	get_tree().change_scene_to_file("res://scenes/MainMenuScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu_scene.tscn")
 
 func _on_return_button_pressed():
 	overlay.fade_out()

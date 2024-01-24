@@ -20,7 +20,7 @@ func _ready():
 	.from(0.0)\
 	.finished.connect(_fade_out)
 	
-func _process(delta):
+func _process(_delta):
 	if interuptable and Input.is_action_just_pressed("exit"):
 		_change_scene()
 	

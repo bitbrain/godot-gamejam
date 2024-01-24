@@ -24,12 +24,12 @@ static func save_game(tree:SceneTree):
 	
 	print("Saving game to user://" + SAVE_GAME_TEMPLATE)
 	
-	var save_game = null
+	var save_file = null
 	
 	if OS.is_debug_build():
-		save_game = FileAccess.open("user://" + SAVE_GAME_TEMPLATE, FileAccess.WRITE)
+		save_file = FileAccess.open("user://" + SAVE_GAME_TEMPLATE, FileAccess.WRITE)
 	else:
-		save_game = FileAccess.open_encrypted_with_pass("user://" + SAVE_GAME_TEMPLATE, FileAccess.WRITE, ENCRYPTION_KEY)
+		save_file = FileAccess.open_encrypted_with_pass("user://" + SAVE_GAME_TEMPLATE, FileAccess.WRITE, ENCRYPTION_KEY)
 		
 	var save_nodes = tree.get_nodes_in_group(SAVE_GROUP_NAME)
 	
@@ -79,7 +79,7 @@ static func save_game(tree:SceneTree):
 			save_data["node_data"] = node.call("save_data")
 		
 		# Store the save dictionary as a new line in the save file.
-		save_game.store_line(JSON.new().stringify(save_data))
+		save_file.store_line(JSON.stringify(save_data))
 
 static func load_game(tree:SceneTree) -> void:
 	
@@ -101,17 +101,17 @@ static func load_game(tree:SceneTree) -> void:
 
 	# Load the file line by line and process that dictionary to restore
 	# the object it represents.
-	var save_game = null
+	var save_file = null
 	
 	if OS.is_debug_build():
-		save_game = FileAccess.open("user://" + SAVE_GAME_TEMPLATE, FileAccess.READ)
+		save_file = FileAccess.open("user://" + SAVE_GAME_TEMPLATE, FileAccess.READ)
 	else:
-		save_game = FileAccess.open_encrypted_with_pass("user://" + SAVE_GAME_TEMPLATE, FileAccess.READ, ENCRYPTION_KEY)
+		save_file = FileAccess.open_encrypted_with_pass("user://" + SAVE_GAME_TEMPLATE, FileAccess.READ, ENCRYPTION_KEY)
 		
-	while save_game.get_position() < save_game.get_length():
+	while save_file.get_position() < save_file.get_length():
 		# Get the saved dictionary from the next line in the save file
 		var test_json_conv = JSON.new()
-		test_json_conv.parse(save_game.get_line())
+		test_json_conv.parse(save_file.get_line())
 		var save_data = test_json_conv.get_data()
 
 		# Firstly, we need to create the object and add it to the tree and set its position.
