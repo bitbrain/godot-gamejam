@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://jyv4g54adkmo"]
 
-[ext_resource type="Script" path="res://ui/overlays/pause_overlay.gd" id="1_q2yda"]
+[ext_resource type="Script" uid="uid://xiphbph8v88o" path="res://ui/overlays/pause_overlay.gd" id="1_q2yda"]
 [ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_n78uc"]
 
 [node name="PauseOverlay" type="CenterContainer"]
